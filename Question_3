@@ -1,0 +1,12 @@
+#!/bin/bash
+
+websites=("google.com" "github.com" "nonexistingwebsite.example")
+
+for site in "${websites[@]}"; do
+
+  if ping -c 1 -W 1 "$site" &> /dev/null; then
+    echo "$site is reachable"
+  else
+    echo "$site is not reachable"
+  fi
+done

@@ -1,0 +1,10 @@
+#!/bin/bash/
+
+
+if [ -z "$1" ]; then
+  echo "Please provide a .docx file as an argument."
+  exit 1
+fi
+
+if command -v docx2txt &> /dev/null; then
+  text=$(docx2txt "$1" -)
